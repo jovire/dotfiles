@@ -7,13 +7,14 @@ local on_attach = function(client, bufnr)
 
         -- Mappings
         local bufopts = { noremap=true, silent=true, buffer=bufnr }
-        vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
-        vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)
-        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, opts)
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, opts)
-        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, opts)
-        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, opts)
-        vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, opts)
+        vim.keymap.set("n", "K", vim.lsp.buf.hover, bufopts)
+        vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, bufopts)
+        vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
+        vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, bufopts)
+        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+        vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, bufopts)
+        vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
+        vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, bufopts)
 
         --vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
         vim.cmd.autocmd("BufWritePre <buffer> lua vim.lsp.buf.format()")
@@ -29,6 +30,7 @@ require"lspconfig".gopls.setup{
         flags = lsp_flags,
         settings = {
           gopls = {
+            gofumpt = true,
             completeUnimported = true,
           }
         }

@@ -2,9 +2,13 @@ return require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
 	-- Colorscheme
-	use "romainl/Apprentice"
-        use "junegunn/seoul256.vim"
         use { "alexaandru/froggy", requires = { "rktjmp/hotpot.nvim" } }
+        use { "NTBBloodbath/doom-one.nvim", setup = function()
+          vim.g.doom_one_italic_comments = true
+          vim.g.doom_one_enable_treesitter = true
+        end,
+        }
+        use "sainnhe/gruvbox-material"
 
 	-- LSP
 	use "williamboman/mason.nvim"
@@ -23,9 +27,9 @@ return require("packer").startup(function(use)
 	-- Treesitter
 	use "nvim-treesitter/nvim-treesitter"
 
-        -- UI
+        -- Misc
+        use { "tjdevries/express_line.nvim", requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" } }
         use "j-hui/fidget.nvim"
-        -- use { "nvim-lualine/lualine.nvim", requires = { "kyazdani42/nvim-web-devicons", opt = true } }
         use { "norcalli/nvim-colorizer.lua", config = function() require("colorizer").setup() end }
 
 end)
