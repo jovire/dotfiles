@@ -11,13 +11,17 @@ local on_attach = function(client, bufnr)
         vim.keymap.set("n", "<leader>e", vim.diagnostic.open_float, bufopts)
         vim.keymap.set("n", "gd", vim.lsp.buf.definition, bufopts)
         vim.keymap.set("n", "gT", vim.lsp.buf.type_definition, bufopts)
-        vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
+        --vim.keymap.set("n", "gi", vim.lsp.buf.implementation, bufopts)
         vim.keymap.set("n", "<leader>cr", vim.lsp.buf.rename, bufopts)
         vim.keymap.set("n", "<leader>ca", vim.lsp.buf.code_action, bufopts)
         vim.keymap.set("i", "<C-s>", vim.lsp.buf.signature_help, bufopts)
 
         --vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.format()]]
         vim.cmd.autocmd("BufWritePre <buffer> lua vim.lsp.buf.format()")
+
+        vim.keymap.set("n", "gr", [[<cmd>lua require("jr.telescope").lsp_references()<CR>]], bufopts)
+        vim.keymap.set("n", "gi", [[<cmd>lua require("jr.telescope").lsp_implementations()<CR>]], bufopts)
+
 end
 
 local lsp_flags = {

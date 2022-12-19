@@ -2,13 +2,15 @@ return require("packer").startup(function(use)
 	use "wbthomason/packer.nvim"
 
 	-- Colorscheme
-        use { "alexaandru/froggy", requires = { "rktjmp/hotpot.nvim" } }
+        use "rebelot/kanagawa.nvim"
         use { "NTBBloodbath/doom-one.nvim", setup = function()
           vim.g.doom_one_italic_comments = true
           vim.g.doom_one_enable_treesitter = true
         end,
         }
         use "sainnhe/gruvbox-material"
+        use "folke/tokyonight.nvim"
+        use "EdenEast/nightfox.nvim"
 
 	-- LSP
 	use "williamboman/mason.nvim"
@@ -23,6 +25,11 @@ return require("packer").startup(function(use)
 	use "hrsh7th/cmp-path"
 	use "L3MON4D3/LuaSnip"
 	use "saadparwaiz1/cmp_luasnip"
+
+        -- Telescope
+        use { "nvim-telescope/telescope.nvim", requires = { "nvim-lua/plenary.nvim"} }
+        use "nvim-telescope/telescope-fzy-native.nvim"
+        use "nvim-telescope/telescope-file-browser.nvim"
 
 	-- Treesitter
 	use "nvim-treesitter/nvim-treesitter"
