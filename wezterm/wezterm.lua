@@ -1,0 +1,1 @@
+/mnt/c/Program Files/WezTerm/wezterm.lua

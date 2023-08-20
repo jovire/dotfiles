@@ -40,8 +40,37 @@ require"lspconfig".gopls.setup{
         }
 }
 
+require"lspconfig".ocamllsp.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+}
+
 require"lspconfig".rust_analyzer.setup{
         capabilities = capabilities,
         on_attach = on_attach,
         flags = lsp_flags,
+        --remove below if this stops working
+        cmd = {"rustup", "run", "stable", "rust-analyzer"}
+}
+
+require"lspconfig".lua_ls.setup{
+  capabilities = capabilities,
+  on_attach = on_attach,
+  flags = lsp_flags,
+  settings = {
+    Lua = {
+      diagnostics = {
+        globals = {
+          'vim'
+        },
+      },
+      format = {
+        enable = false,
+      },
+      hint = {
+        enable = true,
+      },
+    },
+  },
 }

@@ -15,6 +15,7 @@ opt.incsearch = true
 opt.laststatus = 3
 opt.mouse = "n"
 opt.showcmd = true
+opt.showmode = false
 opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true

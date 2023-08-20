@@ -3,19 +3,19 @@ return require("packer").startup(function(use)
 
 	-- Colorscheme
         use "rebelot/kanagawa.nvim"
-        use { "NTBBloodbath/doom-one.nvim", setup = function()
-          vim.g.doom_one_italic_comments = true
-          vim.g.doom_one_enable_treesitter = true
-        end,
-        }
-        use "sainnhe/gruvbox-material"
         use "folke/tokyonight.nvim"
-        use "EdenEast/nightfox.nvim"
+        -- use "EdenEast/nightfox.nvim"
+        use "nyoom-engineering/oxocarbon.nvim"
+        use { "catppuccin/nvim", as = "catppuccin" }
+        use "marko-cerovac/material.nvim"
 
-	-- LSP
+	--other LSP
 	use "williamboman/mason.nvim"
 	use "williamboman/mason-lspconfig.nvim"
 	use "neovim/nvim-lspconfig"
+
+        -- Haskell
+        use { "mrcjkb/haskell-tools.nvim", branch = "1.x.x" }
 
 	-- Completion
 	use "hrsh7th/nvim-cmp"
@@ -35,8 +35,9 @@ return require("packer").startup(function(use)
 	use "nvim-treesitter/nvim-treesitter"
 
         -- Misc
-        use { "tjdevries/express_line.nvim", requires = { "nvim-tree/nvim-web-devicons", "nvim-lua/plenary.nvim" } }
+        use { "nvim-lualine/lualine.nvim", requires = { "nvim-tree/nvim-web-devicons", opt = true } }
+        use { "numToStr/Comment.nvim", config = function() require("Comment").setup() end }
         use "j-hui/fidget.nvim"
         use { "norcalli/nvim-colorizer.lua", config = function() require("colorizer").setup() end }
-
+        use "rktjmp/lush.nvim"
 end)

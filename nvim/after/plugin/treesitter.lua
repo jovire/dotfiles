@@ -4,25 +4,24 @@ end
 
 local _ = require("nvim-treesitter.configs").setup {
         ensure_installed = {
-                "dockerfile",
                 "go",
+                "haskell",
                 "html",
                 "json",
+                "lua",
                 "markdown",
+                "ocaml",
                 "python",
                 "query",
                 "rust",
                 "vim",
+                "vimdoc",
         },
 
         highlight = {
                 enable = true,
+                additional_vim_regex_highlighting = false,
                 use_languagetree = false,
-                custom_captures = {
-                        ["function.call"] = "LuaFunctionCall",
-                        ["function.bracket"] = "Type",
-                        ["namespace.type"] = "TSNamespaceType",
-                },
         },
         indent = {
                 enable = false
