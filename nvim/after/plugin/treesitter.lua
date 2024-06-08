@@ -4,11 +4,13 @@ end
 
 local _ = require("nvim-treesitter.configs").setup {
         ensure_installed = {
+		"diff",
                 "go",
                 "haskell",
                 "html",
                 "json",
                 "lua",
+		"luadoc",
                 "markdown",
                 "ocaml",
                 "python",
@@ -16,6 +18,7 @@ local _ = require("nvim-treesitter.configs").setup {
                 "rust",
                 "vim",
                 "vimdoc",
+                "zig"
         },
 
         highlight = {
