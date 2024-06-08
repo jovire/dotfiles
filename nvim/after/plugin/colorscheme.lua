@@ -123,7 +123,7 @@ function M.material()
     },
     async_loading = true,
     custom_highlights = {
-      LspCodeLens = { link = '#B480D6', italic = true },
+      LspCodeLens = { fg = '#B480D6', italic = true },
       TermCursor = { link = 'Cursor' },
       TermCursorNC = { bg = '#FF5370', fg = '#EEEEEE', ctermbg = 1, ctermfg = 15 },
       FidgetTitle = { link = 'DiagnosticHint' },
@@ -132,7 +132,7 @@ function M.material()
       TelescopePreviewTitle = { bg = '#ABCF76' },
       FzfPreviewTitle = { bg = '#ABCF76' },
       Identifier = { fg = "#FFFFFF" },
-      ['@variables'] = { link = 'Identifier' },
+      ['@variable'] = { link = 'Identifier' },
       ['@property'] = { fg = '#DDDDDD' },
       ['@field'] = { link = '@property' },
       ['@variable.member'] = { link = '@property' },
@@ -168,6 +168,7 @@ function M.zenbones()
   vim.cmd.colorscheme("zenwritten")
 end
 
-vim.cmd.colorscheme("citrus")
+-- vim.cmd.colorscheme("citrus")
+M.material()
 
 return M
