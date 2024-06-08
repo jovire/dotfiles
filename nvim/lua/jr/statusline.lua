@@ -1,14 +1,14 @@
-require("lualine").setup({
+require('lualine').setup({
   options = {
-    theme = "auto",
+    theme = 'auto',
   },
 })
 
-require("fidget").setup{
+require('fidget').setup({
   progress = {
     ignore_done_already = true,
     display = {
       render_limit = 3,
     },
   },
-}
+})
