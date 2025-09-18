@@ -20,7 +20,7 @@ local _ = require('nvim-treesitter.configs').setup({
   },
 
   highlight = {
-    enable = true,
+    enable = false,
     additional_vim_regex_highlighting = false,
     use_languagetree = false,
   },

@@ -33,11 +33,11 @@ cmp.setup({
     format = function(entry, vim_item)
       vim_item.menu = ({
         rg = '[Rg]',
-        buffer = '[buf]',
+        buffer = '[Buffer]',
         nvim_lsp = '[LSP]',
-        nvim_lua = '[api]',
-        path = '[path]',
-        luasnip = '[snip]',
+        nvim_lua = '[Lua]',
+        path = '[Path]',
+        luasnip = '[LuaSnip]',
       })[entry.source.name]
       return vim_item
     end,
