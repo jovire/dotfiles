@@ -2,5 +2,6 @@ ghc/
 go/
 htop/
 wslu/
-nvim/plugin
+# nvim/plugin
+mise/
 wezterm/

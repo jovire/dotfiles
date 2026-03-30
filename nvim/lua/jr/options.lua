@@ -25,6 +25,7 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true
 opt.swapfile = false
+opt.winborder = "rounded"
 
 -- Completion menu
 opt.pumblend = 0
@@ -32,3 +33,6 @@ opt.wildmode = 'longest:full'
 opt.wildoptions = 'pum'
 
 -- folding
+vim.o.foldmethod = 'indent'
+vim.o.foldnestmax = 1
+vim.o.foldlevel = 99
