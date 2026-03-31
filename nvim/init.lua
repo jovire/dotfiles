@@ -1,44 +1,17 @@
--- Clone 'mini.nvim' manually in a way that it gets managed by 'mini.deps'
--- local path_package = vim.fn.stdpath('data') .. '/site/'
--- local mini_path = path_package .. 'pack/deps/start/mini.nvim'
--- if not vim.loop.fs_stat(mini_path) then
---   vim.cmd('echo "Installing `mini.nvim`" | redraw')
---   local clone_cmd = {
---     'git',
---     'clone',
---     '--filter=blob:none',
---     'https://github.com/nvim-mini/mini.nvim',
---     mini_path,
---   }
---   vim.fn.system(clone_cmd)
---   vim.cmd('packadd mini.nvim | helptags ALL')
---   vim.cmd('echo "Installed `mini.nvim`" | redraw')
--- end
-
--- Set up 'mini.deps' (customize to your liking)
--- require('mini.deps').setup({ path = { package = path_package } })
-
--- local add, now, later = MiniDeps.add, MiniDeps.now, MiniDeps.later
-
--- Plugins --
 
 -- Colorschemes
 vim.pack.add({
   'https://github.com/Verf/deepwhite.nvim',
-  -- add('yorickpeterse/nvim-grey')
-  -- add('idr4n/github-monochrome.nvim')
-  -- add('RostislavArts/naysayer.nvim')
   'https://github.com/nickkadutskyi/jb.nvim',
-  -- add('HoNamDuong/hybrid.nvim')
   'https://github.com/sainnhe/sonokai',
   'https://github.com/sainnhe/everforest',
-  -- add('sainnhe/gruvbox-material')
-  -- add('folke/tokyonight.nvim')
   'https://github.com/uhs-robert/oasis.nvim',
-  -- add({ source = 'zenbones-theme/zenbones.nvim', depends = { 'rktjmp/lush.nvim' } })
   'https://github.com/sderev/alabaster.vim',
-  -- add('ronisbr/nano-theme.nvim')
   'https://github.com/wnkz/monoglow.nvim',
+  -- add('yorickpeterse/nvim-grey')
+  -- add('HoNamDuong/hybrid.nvim')
+  -- add('folke/tokyonight.nvim')
+  -- add('ronisbr/nano-theme.nvim')
   -- add('xero/evangelion.nvim')
 })
 
@@ -71,7 +44,6 @@ vim.pack.add({
  'https://github.com/NeogitOrg/neogit',
  'https://github.com/nvim-lua/plenary.nvim',
 })
--- add('sindrets/diffview.nvim')
 
 -- QOL/MISC
 vim.pack.add({ 'https://github.com/nvim-mini/mini.hipatterns' })
