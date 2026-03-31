@@ -6,6 +6,7 @@ opt.wildignore = opt.wildignore + { '*.o', '*~', '*.pyc', '*pycache*' }
 
 opt.autoindent = true
 opt.belloff = 'all'
+vim.o.colorcolumn = '100'
 opt.cursorline = false
 opt.cmdheight = 1
 opt.expandtab = true
@@ -14,6 +15,7 @@ opt.ignorecase = true
 opt.incsearch = true
 opt.laststatus = 3
 opt.mouse = 'a'
+opt.mousescroll = "ver:1,hor:6"
 opt.number = true
 opt.relativenumber = true
 opt.showcmd = true
@@ -23,8 +25,14 @@ opt.smartcase = true
 opt.splitright = true
 opt.splitbelow = true
 opt.swapfile = false
+opt.winborder = "rounded"
 
 -- Completion menu
-opt.pumblend = 17
+opt.pumblend = 0
 opt.wildmode = 'longest:full'
 opt.wildoptions = 'pum'
+
+-- folding
+vim.o.foldmethod = 'indent'
+vim.o.foldnestmax = 1
+vim.o.foldlevel = 99

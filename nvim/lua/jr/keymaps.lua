@@ -40,4 +40,8 @@ keymap.set('n', '<C-j>', '<C-\\><C-N><C-w>j')
 keymap.set('n', '<C-k>', '<C-\\><C-N><C-w>k')
 keymap.set('n', '<C-l>', '<C-\\><C-N><C-w>l')
 
+keymap.set('v', '<leader>y', '"+y')
+keymap.set('v', '<leader>p', '"+p')
+keymap.set('n', '<leader>p', '"+p')
+
 return M
